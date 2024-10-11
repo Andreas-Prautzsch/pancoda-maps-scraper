@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Google Maps Contact Person Scraper by pancoda",
+  "author": "Andreas Prautzsch - pancoda",
+  "developer": {
+    "name": "Andreas Prautzsch - pancoda",
+    "url": "https://pancoda.de"
+  },
+  "version": "1.1",
+  "description": "Scrapes Google Maps and fetches contact details from websites",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "downloads",
+    "http://*/",
+    "https://*/"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.de/maps/*", "*://www.google.com/maps/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
